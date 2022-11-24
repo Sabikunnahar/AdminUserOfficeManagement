@@ -1,0 +1,344 @@
+@media screen and (max-width:1420px){
+
+}
+
+
+@media screen and (max-width:1400px){
+
+}
+
+
+@media screen and (max-width:1307){
+
+}
+
+@media screen and (max-width:1286px){
+
+}
+
+
+@media screen and (max-width:1280px){
+/********************index page**************************/
+  /*navbar*/
+  .logo img {
+    margin-top: 5px;
+  }
+  .navbar-area .logo {
+    padding-left: 2rem;
+    
+  }
+  .navbar-area {
+    display: block;
+    padding-top: 0rem;
+    padding-bottom: 0;
+  }
+  /*MOBILE MENU nav-menu Styling */
+  .menu-btn{
+    display: block;
+    right: 1.2rem;
+    top: -39px;
+  }
+  .menu-btn i.active:before{
+    content: "\f00d";
+  }
+  .navbar .menu {
+    position: absolute;
+    display: inline-block;
+    /* height: 1000px; */
+    /* width: 100%; */
+    left: -108%;
+    top: -87px;
+    padding-top: 4rem;
+    background: rgb(6, 80, 230, 0.9);
+    transition: 0.5s ease-in;
+    -webkit-transition: 0.5s ease-in;
+    -moz-transition: 0.5s ease-in;
+    -ms-transition: 0.5s ease-in;
+    -o-transition: 0.5s ease-in;
+  }
+  .navbar .menu .menu-item a{
+  color: #000;
+  }
+  .nav-left-side-menu .menu .menu-item {
+  display:block;
+  border-top: 1px solid #000;
+  }
+  .navbar .menu.active{
+    left: 0;
+    padding-top: 0;
+  }
+  .navbar ul.menu li.menu-item{
+  display: block;
+  }
+  .navbar ul.menu li.menu-item a, 
+  .navbar ul.menu li.menu-item a.item {
+  padding: 10px 0;
+  border-bottom: 1px solid;
+  padding: 1rem 0;
+  display:block;
+  }
+  .navbar ul.menu li.menu-item a.item{
+  padding: 1rem;
+  }
+  .navbar ul.menu li.menu-item a.menu-link:hover{
+    background: #1465ea;
+    color: #fff;
+  }
+  .header-content {
+    top: 137px;
+  }
+  .navbar .menu .sub-menu {
+    top: 0;
+    left: 100%;
+  }
+}
+
+@media screen and (max-width:1188px){
+
+}
+
+@media screen and (max-width:1120px){
+}
+@media screen and (max-width:1050px){
+  /*****************index page****************/
+  .bg-area {
+    height: 190px;
+  }
+  .student_count h4 {
+    font-size: 30px;
+  }
+  /* footer */
+  .footer-item{
+    flex-basis: 45%;
+  }
+
+  .footer-item h2 {
+    margin-bottom: 10px;
+  }
+}
+
+
+
+@media screen and (max-width:991px){
+  /************index page************* */
+  /* slider */
+  .slider-area{
+    width: 100%;
+    height: auto;
+  }
+  .slider-item {
+    z-index: 0;
+    height: 451px; 
+  }
+  .company_details_area h3 {
+    font-size: 22px;
+  }
+  .company_details_area p{
+    font-size: 13px;
+  }
+  .bg-area {
+    height: 170px;
+  }
+}
+
+@media screen and (max-width:910px){
+
+}
+
+
+@media screen and (max-width:880px){
+  /***************index page**********************/
+  .student_count {
+    height: 360px;
+    padding: 100px;
+  }
+}
+
+
+@media screen and (max-width:840px){
+  /*******************index page****************/
+  .topbar-left ul li a i {
+    font-size: 13px;
+  }
+  /*navbar*/
+  .navbar .menu .sub-sub-menu{
+    width: 300px;
+  }
+}
+@media screen and (max-width:810px){
+
+}
+
+
+@media screen and (max-width:767px){
+  /*****************index page*******************/
+  /* company */
+  .company_details {
+    position: relative;
+    margin-top: 0;
+  }
+  .company_details_area {
+    padding-bottom: 1rem;
+    margin-bottom: 10px;
+    height: auto;
+  }
+  .olympaid_section_tittle {
+    margin-top: 0;
+  }
+  .olympaid_section_tittle h2{
+    font-size: 25px;
+  }
+  .bg-area {
+    height: 145px;
+  }
+  .student_count {
+    height: 320px;
+  }
+  .student_count_item i {
+    font-size: 35px;
+  }
+  .student_count h4 {
+    font-size: 20px;
+  }
+  .student_count p {
+    font-size: 14px;
+  }
+  /* feature */
+  .feature_section_title h2 {
+    font-size: 30px;
+  }
+  .feature_section_items {
+    text-align: center;
+  }
+  .feature_section_items p {
+    text-align: justify;
+  }
+}
+
+
+@media screen and (max-width:700px){
+  /*****************index page**********************/
+  /* slider */
+  .slider-item {
+    z-index: 0;
+    height: 384px;
+  }
+  .slide-left{
+    margin: 5px;
+  }
+
+}
+@media screen and (max-width:640px){
+  /*****************index page**********************/
+  /* slider */
+  .slider-item {
+    z-index: 0;
+    height: 343px; 
+  }
+  .bg-area {
+    height: 117px;
+  }
+}
+
+
+@media screen and (max-width:615px){
+  /**********************index page*******************/
+  .student_count {
+    height: 250px;
+    padding: 60px 0;
+  }
+  /* footer */
+  .footer-item{
+    flex-basis: 90%;
+    margin-top: 30px;
+    text-align: center;
+  }
+  .footer_item_info{
+    width: 90%;
+    margin: 10px auto;
+  }
+  .footer-links li{
+    display: block;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width:562px){
+/*******************index page*****************/
+.menu-btn {
+  display: block;
+  right: 4.2rem;
+  top: -39px;
+}
+}
+
+@media screen and (max-width:530px){
+/*******************index page****************/
+  /*navbar*/
+  .navbar .menu .sub-sub-menu{
+    top: 100%;
+    left: 50%;
+  }
+  .olympaid_section_tittle h2 {
+    font-size: 17px;
+  }
+  .olympaid_section_tittle h4{
+    font-size: 12px;
+  }
+  .bg-area {
+    height: 70px;
+  }
+  /* student */
+  .student_count {
+    height: 210px;
+  }
+  .student_count_item i {
+    font-size: 20px;
+  }
+  .student_count h4 {
+    font-size: 15px;
+    margin-top: 12px;
+  }
+}
+
+
+@media screen and (max-width:420px){
+  /*******************index page****************/
+  /*navbar*/
+  .navbar .menu .sub-menu{
+    width: max-content;
+  }
+  .navbar .menu .sub-sub-menu{
+    top: 100%;
+    left: 50%;
+    max-width: max-content;
+  }
+  /* slider */
+  .slider-item {
+    z-index: 0;
+    height: 282px; 
+  }
+  /* feature */
+  .feature_section_items h3 {
+    font-size: 20px;
+  }
+  .feature_section_items p {
+    font-size: 14px;
+  }
+  /**********************************footer section*******************8 */
+  .footer_section {
+    padding: 4rem;
+  }
+  .footer-item{
+    flex-basis: 90%;
+  }
+  .footer_item_info_left i{
+    font-size: 13px;
+  }
+  .footer_item_info_right h3{
+    font-size: 15px;
+  }
+}
+    
+      
+      
