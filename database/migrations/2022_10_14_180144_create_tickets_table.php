@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->longText('ticket_des');
             $table->string('ticket_assigned')->default("None");
+            $table->integer('user_id');
+            $table->string('user_name');
             $table->integer('status')->default(0);
             $table->timestamps();
         });

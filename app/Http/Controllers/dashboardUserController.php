@@ -25,6 +25,14 @@ class dashboardUserController extends Controller
 
         return view('auth.notifications.index');
     }
+    public function notice_rules(){
+
+        return view('auth.common_pages.notice_rules');
+    }
+    public function ticket_rules(){
+
+        return view('auth.common_pages.ticket_rules');
+    }
 
     //Approval
     public function notification_read($id){

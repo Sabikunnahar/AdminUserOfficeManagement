@@ -13,6 +13,7 @@ class adminLeaveController extends Controller
     {
         $this->middleware('auth:admin');
     }
+    //index
     public function index(){
 
         $leaves = Leave::orderBy('id','ASC')->paginate(10);
@@ -64,7 +65,7 @@ class adminLeaveController extends Controller
                 'message'=>'update Success',
                 'alert-type'=>'success'
                  );
-            return redirect()->route('admin_create_leaves')->with($notification);
+            return redirect()->route('admin_view_leaves')->with($notification);
         }
         
     //Approval
@@ -84,5 +85,12 @@ class adminLeaveController extends Controller
             'alert-type'=>'success'
             );
         return redirect()->back()->with($notification);
+    }
+    //index
+    public function view(){
+
+        $leaves = Leave::orderBy('id','ASC')->paginate(10);
+
+        return view('admin.leave.view',compact('leaves'));
     }
 }

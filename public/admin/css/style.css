@@ -211,7 +211,7 @@ a:hover { text-decoration: none; }
 /*---------------------------------------------------------------------
                                 Sidebar
 -----------------------------------------------------------------------*/
-.iq-sidebar { position: fixed; z-index: 999; top: 0; width: 260px; overflow: hidden; height: 100%; background: #ffffff; transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -webkit-box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1); -moz-box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1); box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1); }
+.iq-sidebar { position: fixed; z-index: 999; top: 0; width: 285px; overflow: hidden; height: 100%; background: #ffffff; transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -webkit-box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1); -moz-box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1); box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1); overflow-y: scroll;}
 .iq-sidebar .iq-sidebar-logo { float: none; width: 100%; }
 .iq-sidebar #sidebar-scrollbar { margin-top: 15px; }
 
@@ -936,7 +936,7 @@ Privacy Policy Page
 /*---------------------------------------------------------------------
 User List Page
 -----------------------------------------------------------------------*/
-.list-user-action a { font-size: 16px; height: 25px; width: 25px; text-align: center; line-height: 25px; margin: 0 3px; background: #e5f2ff; color: #0084ff; display: inline-block; border-radius: 5px; }
+.list-user-action a { font-size: 16px; height: 25px; width: auto; text-align: center; line-height: 25px; margin: 0 3px; background: #e5f2ff; color: #0084ff; display: inline-block; border-radius: 5px; }
 #user-list-table.table td { vertical-align: middle; }
 .user-list-files a { background: #e5f2ff; color: #0084ff; padding: 10px 15px; margin: 0 0 0 10px; border-radius: 5px; line-height: normal; }
 .table-responsive #exampleInputSearch { width: auto; }
@@ -1031,3 +1031,39 @@ body.two-sidebar.sidebar-main .iq-sidebar-logo { width: 60px }
 .wrapper-menu.open .menu-open { opacity: 1; }
 .two-sidebar.sidebar-main .wrapper-menu.open { transform: rotate(0deg); }
 
+/*****************Custom****************/
+.tab_butttons{
+  padding: 15px;
+  font-size: 25px sans-serif;
+  border: 1px solid #0062cc ;
+  border: 1px solid; 
+  border-radius: 5px;
+  margin-right: 20px;
+  overflow: hidden;
+}
+.tab_butttons:hover {
+background-color: #0062cc;
+color: white;
+}
+
+.nav-item span.dots {
+  height: 8px;
+  width: 8px;
+  font-size: 0;
+  text-align: center;
+  padding: 0;
+  position: absolute;
+  top: 18px;
+  right: 6px;
+  animation: shadow-pulse-dots 1s infinite;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+.notification{
+padding: 5px 7px;
+background-color: white;
+border-radius: 50%;
+margin-left: 5px;
+color: red;
+font-weight: 900;
+}

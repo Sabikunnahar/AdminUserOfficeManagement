@@ -12,7 +12,7 @@
           </div>
        </div>
        <div class="navbar-breadcrumb">
-          <h5 class="mb-0">Ntifications</h5>
+          <h5 class="mb-0">Notifications</h5>
           <nav aria-label="breadcrumb">
              <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Notifications</a></li>
@@ -44,7 +44,7 @@
                         {{ $item->notify_text }}
                         <div class="marks_done"  style="text-align: right; width: 90%;">
                             @if ($item->status == 0)
-                                <a href="{{url('markasdone', $item->id)}}" class="bg-white" style="padding: 10px; width: 90%;"> Mark  Done</a>
+                                <a href="{{url('markasdone', $item->id)}}" class="bg-white" style="padding: 10px; width: 90%;"> Not Readed  Yet</a>
                             @else
                             <a href="#" class="badge badge-success " style="padding: 10px;">Already Readed</a>
                             @endif

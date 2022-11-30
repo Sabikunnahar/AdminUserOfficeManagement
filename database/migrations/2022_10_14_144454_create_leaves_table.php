@@ -17,6 +17,10 @@ return new class extends Migration
             $table->id();
             $table->longText('leave_reason');
             $table->string('leave_date');
+            $table->integer('user_id');
+            $table->string('user_name');
+            $table->integer('total_leave')->default(30);
+            $table->integer('count_leave')->default(0);
             $table->integer('status')->default(0);
             $table->timestamps();
         });

@@ -53,4 +53,12 @@ class notificationController extends Controller
             );
         return redirect()->back()->with($notification);
     }
+
+    //index
+    public function view(){
+
+        $notify = Notification::orderBy('id','ASC')->paginate(10);
+
+        return view('admin.notification.view',compact('notify'));
+    }
 }

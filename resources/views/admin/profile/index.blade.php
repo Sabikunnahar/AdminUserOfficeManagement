@@ -44,7 +44,7 @@
                                      </div>
                                      <div class="profile-detail d-flex align-items-center">
                                         <h3>{{ Auth::user()->name }}</h3>
-                                        <p class="m-0 pl-3"> __ Creator</p>
+                                        <p class="m-0 pl-3"> __ Created By</p>
                                      </div>
                                   </div>
                                </div>

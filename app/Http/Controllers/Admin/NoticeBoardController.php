@@ -63,7 +63,7 @@ class NoticeBoardController extends Controller
             'message'=>'update Success',
             'alert-type'=>'success'
              );
-        return redirect()->route('notice_board')->with($notification);
+        return redirect()->route('admin_notice_view')->with($notification);
     }
 
     // Destroy
@@ -75,5 +75,12 @@ class NoticeBoardController extends Controller
             'alert-type'=>'success'
              );
         return redirect()->back()->with($notification);
+    }
+    //index
+    public function view(){
+
+        $notice_board = NoticeBoard::orderBy('id','ASC')->paginate(10);
+
+        return view('admin.notice_board.view',compact('notice_board'));
     }
 }

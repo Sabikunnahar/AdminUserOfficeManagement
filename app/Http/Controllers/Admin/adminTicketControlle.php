@@ -64,8 +64,15 @@ class adminTicketControlle extends Controller
                 'message'=>'update Success',
                 'alert-type'=>'success'
                     );
-            return redirect()->route('view_tickets')->with($notification);
+            return redirect()->route('admin_view_tickets')->with($notification);
         }
+    //index
+    public function view(){
+
+        $ticket = Ticket::orderBy('id','ASC')->paginate(10);
+
+        return view('admin.tickets.view',compact('ticket'));
+    }
 
 
 }

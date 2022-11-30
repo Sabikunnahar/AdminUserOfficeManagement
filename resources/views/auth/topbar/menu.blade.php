@@ -1,25 +1,4 @@
-<style>
-    .nav-item span.dots {
-    height: 8px;
-    width: 8px;
-    font-size: 0;
-    text-align: center;
-    padding: 0;
-    position: absolute;
-    top: 18px;
-    right: 6px;
-    animation: shadow-pulse-dots 1s infinite;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-}
-.notification{
-padding: 5px 12px;
-background-color: white;
-border-radius: 50%;
-margin-left: 5px;
-color: red;
-}
-</style>
+
 <nav class="navbar navbar-expand-lg navbar-light p-0">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <i class="ri-menu-3-line"></i>
@@ -46,7 +25,13 @@ color: red;
            <li class="nav-item iq-full-screen"><a href="#" class="iq-waves-effect" id="btnFullscreen"><i class="ri-fullscreen-line"></i></a></li>
         </ul>
      </div>
-     <a class="btn btn-danger text-capitalize" href="{{ route('all_notify') }}">Notifications <span class="notification"></span></a>
+@php
+    $notification = App\Models\Notification::where('status', 0)->count(); 
+@endphp
+
+
+     <a class="btn btn-danger text-capitalize" href="{{ route('all_notify') }}">Notifications 
+      <span class="notification">{{$notification}}</span></a>
      <a class="btn btn-success text-capitalize ml-3" href="{{url('/start-attendance')}}">Start the attendance time</a>
      <a class="btn btn-secondary text-capitalize ml-3 mr-3" href="{{url('/end-attendance', Auth::user()->id)}}">end the attendance time</a>
     <ul class="navbar-list">

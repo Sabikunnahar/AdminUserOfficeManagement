@@ -64,7 +64,7 @@ class EventController extends Controller
             'message'=>'update Success',
             'alert-type'=>'success'
              );
-        return redirect()->route('event_create')->with($notification);
+        return redirect()->route('admin_event_view')->with($notification);
     }
     // Destroy
     public function destroy($id){
@@ -75,5 +75,13 @@ class EventController extends Controller
             'alert-type'=>'success'
              );
         return redirect()->back()->with($notification);
+    }
+
+    //index
+    public function view(){
+
+        $events = Event::orderBy('id','ASC')->paginate(10);
+
+        return view('admin.event.view',compact('events'));
     }
 }
