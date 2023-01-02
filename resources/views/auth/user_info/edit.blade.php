@@ -41,7 +41,7 @@
                    </div>
                 </div>
                 <div class="iq-card-body">
-                   <form class="form-horizontal" action="{{ route('user_info_update') }}" method="POST">
+                   <form class="form-horizontal" action="{{ route('user_info_update') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="id" value="{{ $edit->id }}">
                     <div class="form-group">
@@ -74,6 +74,16 @@
                                          <div class="iq-card-body">
                                              <div class="mt-5 mx-auto">
                                                  <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <div class="form-group">
+                                                            <label for="email">Profile Picture:</label>
+                                                               <input type="file" class="form-control" name="profile_picture" value="{{ $edit->profile_picture }}">
+                                                               @error('profile_picture')
+                                                               <span class="invalid-feedback" role="alert"></span>
+                                                               <strong class="text-danger">{{ $message }}</strong>
+                                                               @enderror
+                                                         </div>
+                                                    </div>
                                                     <div class="col-lg-4">
                                                         <div class="form-group">
                                                             <label for="">Father's Name:</label>
@@ -338,7 +348,7 @@
                                                      </div>
                                                      <div class="col-lg-8">
                                                          <div class="form-group">
-                                                             <label for="email">Gallery Image</label>
+                                                             <label for="email">Document Image:</label>
                                                                 <input type="file" class="form-control" name="document_img" value="{{ $edit->document_img }}">
                                                                 @error('document_img')
                                                                 <span class="invalid-feedback" role="alert"></span>

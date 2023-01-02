@@ -49,16 +49,43 @@
                                 <strong class="text-danger">{{ $message }}</strong>
                                 @enderror
                             </div>
-                            <div class="col-lg-12">
+                            <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="">Leave Date</label>
-                                    <input type="date" class="form-control" name="leave_date" value="{{ old('leave_date') }}" placeholder="Faculties English">
-                                    @error('leave_date')
+                                    <label for="">From Date</label>
+                                    <input type="date" class="form-control" name="leave_start_date" value="{{ old('leave_start_date') }}">
+                                    @error('leave_start_date')
                                     <span class="invalid-feedback" role="alert"></span>
                                     <strong class="text-danger">{{ $message }}</strong>
                                     @enderror
                                 </div>
                             </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="">To Date</label>
+                                    <input type="date" class="form-control" name="leave_end_date" value="{{ old('leave_end_date') }}">
+                                    @error('leave_end_date')
+                                    <span class="invalid-feedback" role="alert"></span>
+                                    <strong class="text-danger">{{ $message }}</strong>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                   <label for="">Leave Type:</label><br/>
+                                   <select style="width: 250px;"  name="leave_type" value="{{ old('leave_type') }}">
+                                    <option label="Choose">
+                                        <option name="name">Sick</option>
+                                        <option name="name">Casual</option>
+                                        <option name="name">Others</option>
+                                    </option>
+                                   </select>
+                                   @error('leave_type')
+                                   <span class="invalid-feedback" role="alert"></span>
+                                   <strong class="text-danger">{{ $message }}</strong>
+                                   @enderror
+                               </div>
+                            </div>
+
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success" style="font-size: 18px">Create</button>
                             </div>

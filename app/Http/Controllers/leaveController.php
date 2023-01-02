@@ -27,12 +27,16 @@ class leaveController extends Controller
 
         $request->validate([
             'leave_reason' =>'required',
-            'leave_date' =>'required',
+            'leave_start_date' =>'required',
+            'leave_end_date' =>'required',
+            'leave_type' =>'required',
         ]);
 
         Leave::insert([
             'leave_reason'=>$request->leave_reason,
-            'leave_date'=>$request->leave_date,
+            'leave_start_date'=>$request->leave_start_date,
+            'leave_end_date'=>$request->leave_end_date,
+            'leave_type'=>$request->leave_type,
             'user_id' =>Auth::user()->id,
             'user_name' =>Auth::user()->name,
             'created_at' =>Carbon::now(),
@@ -73,11 +77,15 @@ class leaveController extends Controller
         $id= $request->id;
         $request->validate([
             'leave_reason' =>'required',
-            'leave_date' =>'required',
+            'leave_start_date' =>'required',
+            'leave_end_date' =>'required',
+            'leave_type' =>'required',
         ]);
         Leave::findOrFail($id)->update([
             'leave_reason'=>$request->leave_reason,
-            'leave_date'=>$request->leave_date,
+            'leave_start_date'=>$request->leave_start_date,
+            'leave_end_date'=>$request->leave_end_date,
+            'leave_type'=>$request->leave_type,
             'created_at' =>Carbon::now(),
         ]);
         $notification=array(

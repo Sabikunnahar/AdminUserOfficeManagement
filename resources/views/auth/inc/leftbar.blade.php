@@ -1,7 +1,7 @@
 <div class="wrapper">
     <!-- Sidebar  -->
       <div class="iq-sidebar">
-         <img src="{{ asset('/admin') }}/images/user/logo.png" class="img-fluid">
+         <img src="{{Auth::user()->profile_picture}}" class="img-fluid">
          <div style="width: 100%; text-align:center;">
             <h6>Name: {{ Auth::user()->name }}</h6>
             <h6>Employee Code: E-0{{ Auth::user()->id }}</h6>

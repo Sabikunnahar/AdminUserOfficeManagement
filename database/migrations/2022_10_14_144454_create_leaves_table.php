@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('leaves', function (Blueprint $table) {
             $table->id();
             $table->longText('leave_reason');
-            $table->string('leave_date');
+            $table->string('leave_start_date');
+            $table->string('leave_end_date');
+            $table->string('leave_type');
             $table->integer('user_id');
             $table->string('user_name');
             $table->integer('total_leave')->default(30);

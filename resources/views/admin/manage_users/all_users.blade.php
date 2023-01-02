@@ -40,9 +40,14 @@
                 <table id="user-list-table" class="table table-striped table-bordered mt-4" role="grid" aria-describedby="user-list-page-info">
                 <thead>
                     <tr>
-                        <th>Sl</th>
-                        <th>User Names</th>
-                        <th>User Emcrypt Passwords</th>
+                        <th>User Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                        <th>Gender</th>
+                        <th>Job Role</th>
+                        <th>Total Leaves</th>
+                        <th>Leaves</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,7 +59,12 @@
                         {{-- <td>{{ $users->firstItem()+$loop->index}}</td> --}}
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->email }}</td>
-                        <td>{{ $item->password }}</td>
+                        <td>{{ $item->addresss}}</td>
+                        <td>{{ $item->phone}}</td>
+                        <td>{{ $item->gender}}</td>
+                        <td>{{ $item->job_title}}</td>
+                        <td>{{ $item->leave_total}}</td>
+                        <td>{{ $item->leave_count}}</td>
                         
 
                     </tr>

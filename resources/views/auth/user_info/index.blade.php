@@ -36,7 +36,7 @@
                 <div class="iq-card-header d-flex justify-content-between text-center">
 
                         <div class="mx-auto py-5" style="width: 300px;">
-                            <img src="{{ asset('admin') }}/images/user-5.jpg" alt="">
+                            <img src="{{Auth::user()->profile_picture}}" width="300" height="300">
                             <h5 class="py-4">Employee Name: {{Auth::user()->name}}</h5>
                             <h5>Email Address: {{Auth::user()->email}}</h5>
                         </div>
@@ -133,8 +133,9 @@
                                         <div class="container-fluid">
                                             <div class="iq-card-body">
                                                 <div class="mt-5 mx-auto border border-dark text-left py-3  pl-5" style="width: 785px;">
-                                                    <p style="font-size: 18px;">Document Title:  <span  class="font-weight-bold">{{$item->document_name}}</span></p>
-                                                    <p style="font-size: 18px;">Company Address:  </p><span  class="font-weight-bold">{{$item->document_img}}</span>
+                                                    <p style="font-size: 18px;">Certificate Name:  <span  class="font-weight-bold">{{$item->document_name}}</span></p>
+                                                    <p style="font-size: 23px;">Certificate:  </p>
+                                                    <img src="{{$item->document_img}}" alt="" width="300" height="300">
                                                 </div>
                                                 <div class="row justify-content-between mt-3">
                                                     <div id="user-list-page-info" class="col-md-6">

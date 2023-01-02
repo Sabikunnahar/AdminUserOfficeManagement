@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Intervention\Image\Facades\Image;
 
 class UserInfoController extends Controller
 {
@@ -32,6 +33,22 @@ class UserInfoController extends Controller
 
         $id= $request->id;
         $save =User::findOrFail($id);
+
+        if ($request->hasFile('document_img')) {
+            $image= $request->file('document_img');
+            $img_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->save('admin/images/user'.$img_gen);
+            $img_url = 'admin/images/user'.$img_gen;
+            $save['document_img'] = $img_url;
+        }
+
+        if ($request->hasFile('profile_picture')) {
+            $image= $request->file('profile_picture');
+            $img_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->save('admin/images/user/profilePicture'.$img_gen);
+            $img_url = 'admin/images/user/profilePicture'.$img_gen;
+            $save['profile_picture'] = $img_url;
+        }
 
         $save -> fathers_name= $request->fathers_name;
         $save -> mothers_name= $request->mothers_name;

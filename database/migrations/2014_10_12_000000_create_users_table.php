@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('profile_picture')->nullable();
             
             $table->string('fathers_name')->default('Empty');
             $table->string('mothers_name')->default('Empty');
@@ -42,7 +43,7 @@ return new class extends Migration
             $table->string('job_title')->default('Empty');
             
             $table->string('document_name')->default('Empty');
-            $table->string('document_img')->default('Empty');
+            $table->string('document_img')->nullable();
 
 
             $table->integer('leave_total')->default(30);

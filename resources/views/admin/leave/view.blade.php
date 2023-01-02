@@ -44,10 +44,12 @@
                         <thead>
                             <tr>
                                 <th>Sl</th>
-                                <th>Leave List</th>
-                                <th>Leave Dates</th>
+                                <th>Leave Reason</th>
+                                <th>From Dates</th>
+                                <th>To Dates</th>
+                                <th>Leave Type</th>
+                                <th>Approval</th>
                                 <th>Status</th>
-                                <th>Approvement</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -56,7 +58,9 @@
                             <tr>
                                 <td>{{ $leaves->firstItem()+$loop->index}}</td>
                                 <td>{{ $item->leave_reason }}</td>
-                                <td>{{ $item->leave_date }}</td>
+                                <td>{{ $item->leave_start_date }}</td>
+                                <td>{{ $item->leave_end_date }}</td>
+                                <td>{{ $item->leave_type }}</td>
                                 {{-- <td>{{ $item->status }}</td> --}}
                                 <td>
                                     <a href="{{url('admin/approved', $item->id)}}" class="btn btn-success">Approve</a>

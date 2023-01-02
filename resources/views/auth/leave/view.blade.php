@@ -44,8 +44,10 @@
                         <thead>
                             <tr>
                                 <th>Sl</th>
-                                <th>Leave List</th>
-                                <th>Leave Dates</th>
+                                <th>Leave Reason</th>
+                                <th>From Dates</th>
+                                <th>To Dates</th>
+                                <th>Leave Type</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -56,7 +58,9 @@
                                 @if ($item->user_id == Auth::user()->id)
                                 <td>{{ $leaves->firstItem()+$loop->index}}</td>
                                 <td>{{ $item->leave_reason }}</td>
-                                <td>{{ $item->leave_date }}</td>
+                                <td>{{ $item->leave_start_date }}</td>
+                                <td>{{ $item->leave_end_date }}</td>
+                                <td>{{ $item->leave_type }}</td>
                                 <td>
                                     @if ($item->status == 1)
                                         <span class="badge badge-success">Approved</span>
