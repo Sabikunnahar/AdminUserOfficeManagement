@@ -23,6 +23,16 @@
              <nav class="iq-sidebar-menu">
                 <ul id="iq-sidebar-toggle" class="iq-menu">
                    <li class="iq-menu-title"><i class="ri-separator"></i><span>Main</span></li>
+                  {{-- company start --}}
+                  <li class="@yield('company')" >
+                     <a href="#company" class="iq-waves-effect collapsed"  data-toggle="collapse" aria-expanded="false"><i class="fas fa-exclamation-triangle"></i><span>Company Name & Logo</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                     <ul id="company" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                        <li class="@yield('create')" ><a href="{{ route('company_create') }}"><i class="fas fa-angle-right"></i>Create New</a></li>
+                        <li class="@yield('create')" ><a href="{{ route('company_create') }}"><i class="fas fa-angle-right"></i>View</a></li>
+                        
+                     </ul>
+                  </li>
+
                    {{-- noticeboard start --}}
                   <li class="@yield('notice_board')" >
                      <a href="#notice_board" class="iq-waves-effect collapsed"  data-toggle="collapse" aria-expanded="false"><i class="fas fa-exclamation-triangle"></i><span>Notice Management</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>

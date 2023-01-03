@@ -123,6 +123,17 @@
 
     </div>
  </div>
+ {{-- @php
+    $notification = App\Models\User::where('status', 0)->count(); 
+@endphp --}}
+@php
+$user = App\Models\User::count(); 
+$notification = App\Models\Notification::count(); 
+$tickets = App\Models\Ticket::count(); 
+$leave = App\Models\Leave::where('status', 0)->count(); 
+$events = App\Models\Event::count(); 
+$notices = App\Models\NoticeBoard::count(); 
+@endphp
     <!-- Right Sidebar Panel End-->
     <div id="content-page" class="content-page">
        <div class="container-fluid">
@@ -133,8 +144,9 @@
                    <div class="iq-card-body">
                       <div class="row">
                          <div class="col">
+
                             <h5 class="card-title text-uppercase text-secondary mb-0 d-block">Live Users</h5>
-                            {{-- <h2 class="mb-0 d-block">350</h2> --}}
+                            <h2 class="mb-0 d-block">{{$user}}</h2>
                          </div>
                          <div class="col-auto">
                             <div class="icon iq-icon-box rounded-circle iq-bg-primary rounded-circle">
@@ -146,46 +158,107 @@
                    <div id="chart-9"></div>
                 </div>
              </div>
-             {{-- <div class="col-lg-2 col-md-6">
-                <div class="iq-card iq-card-block iq-card-stretch iq-card-height wow zoomIn">
-                   <div class="iq-card-body">
-                      <div class="row">
-                         <div class="col-lg-12 mb-2 d-flex justify-content-between">
-                            <div class="icon iq-icon-box rounded-circle iq-bg-warning rounded-circle">
-                               <i class="ri-account-box-line"></i>
-                            </div>
-                         </div>
-                         <div class="col-lg-12 mt-3">
-                            <h6 class="card-title text-uppercase text-secondary mb-0">USERS</h6>
-                            <span class="h2 text-dark mb-0 counter">850,789</span>
-                         </div>
-                      </div>
-                      <p class="mb-0 text-muted mt-3">
-                         <span class="text-success mr-2"><i class="ri-arrow-up-fill"></i> 3.48%</span>
-                      </p>
-                   </div>
-                </div>
-             </div> --}}
-             {{-- <div class="col-lg-2 col-md-6">
-                <div class="iq-card iq-card-block iq-card-stretch iq-card-height wow zoomIn">
-                   <div class="iq-card-body">
-                      <div class="row">
-                         <div class="col-lg-12 mb-2 d-flex justify-content-between">
-                            <div class="icon iq-icon-box rounded-circle iq-bg-danger rounded-circle">
-                               <i class="ri-account-box-line"></i>
-                            </div>
-                         </div>
-                         <div class="col-lg-12 mt-3">
-                            <h6 class="card-title text-uppercase text-secondary mb-0">SESSIONS</h6>
-                            <span class="h2 text-dark mb-0 counter">810,084</span>
-                         </div>
-                      </div>
-                      <p class="mb-0 text-muted mt-3">
-                         <span class="text-danger mr-2"><i class="ri-arrow-down-fill"></i> 10%</span>
-                      </p>
-                   </div>
-                </div>
-             </div> --}}
+             {{-- end --}}
+             <div class="col-lg-4 col-md-12">
+               <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                  <div class="iq-card-body">
+                     <div class="row">
+                        <div class="col">
+
+                           <h5 class="card-title text-uppercase text-secondary mb-0 d-block">Massages</h5>
+                           <h2 class="mb-0 d-block">{{$notification}}</h2>
+                        </div>
+                        <div class="col-auto">
+                           <div class="icon iq-icon-box rounded-circle iq-bg-primary rounded-circle">
+                              <i class="ri-add-box-line"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div id="chart-9"></div>
+               </div>
+            </div>
+            {{-- end --}}
+            <div class="col-lg-4 col-md-12">
+               <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                  <div class="iq-card-body">
+                     <div class="row">
+                        <div class="col">
+
+                           <h5 class="card-title text-uppercase text-secondary mb-0 d-block">Tickets</h5>
+                           <h2 class="mb-0 d-block">{{$tickets}}</h2>
+                        </div>
+                        <div class="col-auto">
+                           <div class="icon iq-icon-box rounded-circle iq-bg-primary rounded-circle">
+                              <i class="ri-add-box-line"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div id="chart-9"></div>
+               </div>
+            </div>
+            {{-- end --}}
+            <div class="col-lg-4 col-md-12">
+               <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                  <div class="iq-card-body">
+                     <div class="row">
+                        <div class="col">
+
+                           <h5 class="card-title text-uppercase text-secondary mb-0 d-block">New Leave applications</h5>
+                           <h2 class="mb-0 d-block">{{$leave}}</h2>
+                        </div>
+                        <div class="col-auto">
+                           <div class="icon iq-icon-box rounded-circle iq-bg-primary rounded-circle">
+                              <i class="ri-add-box-line"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div id="chart-9"></div>
+               </div>
+            </div>
+            {{-- end --}}
+            <div class="col-lg-4 col-md-12">
+               <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                  <div class="iq-card-body">
+                     <div class="row">
+                        <div class="col">
+
+                           <h5 class="card-title text-uppercase text-secondary mb-0 d-block">New Events</h5>
+                           <h2 class="mb-0 d-block">{{$events}}</h2>
+                        </div>
+                        <div class="col-auto">
+                           <div class="icon iq-icon-box rounded-circle iq-bg-primary rounded-circle">
+                              <i class="ri-add-box-line"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div id="chart-9"></div>
+               </div>
+            </div>
+            {{-- end --}}
+            <div class="col-lg-4 col-md-12">
+               <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                  <div class="iq-card-body">
+                     <div class="row">
+                        <div class="col">
+
+                           <h5 class="card-title text-uppercase text-secondary mb-0 d-block">New Notices</h5>
+                           <h2 class="mb-0 d-block">{{$notices}}</h2>
+                        </div>
+                        <div class="col-auto">
+                           <div class="icon iq-icon-box rounded-circle iq-bg-primary rounded-circle">
+                              <i class="ri-add-box-line"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div id="chart-9"></div>
+               </div>
+            </div>
+            {{-- end --}}
              {{-- <div class="col-lg-2 col-md-6">
                 <div class="iq-card iq-card-block iq-card-stretch iq-card-height wow zoomIn">
                    <div class="iq-card-body">
@@ -202,26 +275,6 @@
                       </div>
                       <p class="mb-0 text-muted mt-3">
                          <span class="text-success mr-2"><i class="ri-arrow-up-fill"></i> 6.48%</span>
-                      </p>
-                   </div>
-                </div>
-             </div> --}}
-             {{-- <div class="col-lg-2 col-md-6">
-                <div class="iq-card iq-card-block iq-card-stretch iq-card-height wow zoomIn">
-                   <div class="iq-card-body">
-                      <div class="row">
-                         <div class="col-lg-12 mb-2 d-flex justify-content-between">
-                            <div class="icon iq-icon-box rounded-circle iq-bg-primary rounded-circle">
-                               <i class="ri-timer-2-line"></i>
-                            </div>
-                         </div>
-                         <div class="col-lg-12 mt-3">
-                            <h6 class="card-title text-uppercase text-secondary mb-0">DURATION</h6>
-                            <span class="h2 text-dark mb-0 counter">3.25</span>
-                         </div>
-                      </div>
-                      <p class="mb-0 text-muted mt-3">
-                         <span class="text-success mr-2"><i class="ri-arrow-up-fill"></i> 5.48%</span>
                       </p>
                    </div>
                 </div>

@@ -10,6 +10,7 @@ use App\Http\Controllers\dashboardUserController;
 use App\Http\Controllers\Admin\adminTicketControlle;
 use App\Http\Controllers\Admin\adminLeaveController;
 use App\Http\Controllers\Admin\notificationController;
+use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\attendanceController;
 use App\Http\Controllers\UserInfoController;
 use App\Http\Controllers\leaveController;
@@ -112,6 +113,15 @@ Route::group(['prefix'=>'admin'], function(){
     Route::get('notification/delete/{id}',[notificationController::class,'destroy']);
     Route::get('notification/view',[notificationController::class,'view'])->name('admin_view_notify');
     
+    /// company
+    Route::get('company',[CompanyController::class,'index'])->name('company_create');
+    Route::post('company/store',[CompanyController::class,'store'])->name('company_store');
+    Route::get('company/edit/{id}',[CompanyController::class,'edit']);
+    Route::post('company/update',[CompanyController::class,'update'])->name('company_update');
+    Route::get('company/delete/{id}',[CompanyController::class,'destroy']);
+
+
+
     });
 
     //*******************************user controlls****************************
