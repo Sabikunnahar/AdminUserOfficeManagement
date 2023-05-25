@@ -20,7 +20,7 @@
       <link rel="stylesheet" href="{{ asset('admin') }}/css/style.css">
       <!-- Responsive CSS -->
       <link rel="stylesheet" href="{{ asset('admin') }}/css/responsive.css">
-    
+
     <title>Office Management System</title>
     <style>
 
@@ -57,7 +57,7 @@ $company = App\Models\Company::orderBy('id','ASC')->get();
                     <a class="nav-link text-light" href="{{ route('admin.login') }}">Admin Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="{{ route('admin.register') }}">Admin Registration</a>
+                    {{-- <a class="nav-link text-light" href="{{ route('admin.register') }}">Admin Registration</a> --}}
                 </li>
             </ul>
 
@@ -72,11 +72,11 @@ $company = App\Models\Company::orderBy('id','ASC')->get();
 
       <div class="homepage_body">
         <img src="{{ asset('admin') }}/images/office.jpg" alt="">
-        <h2>Office Management System</h2>
+        <h2> Computerized Office Management System</h2>
       </div>
 
 
-    
+
     <!-- JS FILES -->
     <script src="assets/resources/js/jquery-3.6.0.min.js"></script>
     <script src="assets/resources/js/bootstrap.min.js"></script>

@@ -29,7 +29,7 @@
                      <ul id="company" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="@yield('create')" ><a href="{{ route('company_create') }}"><i class="fas fa-angle-right"></i>Create New</a></li>
                         <li class="@yield('create')" ><a href="{{ route('company_create') }}"><i class="fas fa-angle-right"></i>View</a></li>
-                        
+
                      </ul>
                   </li>
 
@@ -40,7 +40,7 @@
                         <li class="@yield('create')" ><a href="#"><i class="fas fa-angle-right"></i>Notice Rules</a></li>
                         <li class="@yield('create')" ><a href="{{ route('notice_board') }}"><i class="fas fa-angle-right"></i>Create New Notices</a></li>
                         <li class="@yield('create')" ><a href="{{ route('admin_notice_view') }}"><i class="fas fa-angle-right"></i>View All Notices</a></li>
-                        
+
                      </ul>
                   </li>
                   {{-- event --}}
@@ -80,17 +80,18 @@
                   {{-- user --}}
                   <li class="@yield('all_users')" >
                      <a href="#all_users" class="iq-waves-effect collapsed"  data-toggle="collapse" aria-expanded="false"><i class="fas fa-users"></i><span>User Management</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                     
+
                      <ul id="all_users" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="@yield('view')" ><a href="{{route('create_users')}}">Create New Users</a></li>
                         <li class="@yield('view')" ><a href="{{ route('all_users') }}">View All Users</a></li>
+                        <li class="@yield('create')" ><a href="{{ route('user_pdf') }}">PDF of Users</a></li>
                      </ul>
                   </li>
 
                   {{-- benefit --}}
                   <li class="@yield('admin_benefit')" >
                      <a href="#admin_benefit" class="iq-waves-effect collapsed"  data-toggle="collapse" aria-expanded="false"><i class="fas fa-id-card"></i><span>Employee Benifit Request</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                     
+
                      <ul id="admin_benefit" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="@yield('view')" ><a href="{{route('user_loans')}}">Requested Loans</a></li>
                         <li class="@yield('view')" ><a href="{{route('admin_travel_view')}}">Requested Travels</a></li>
@@ -100,13 +101,13 @@
                   {{-- attendence --}}
                   <li class="@yield('admin_attendance')" >
                      <a href="#admin_attendance" class="iq-waves-effect collapsed"  data-toggle="collapse" aria-expanded="false"><i class="fas fa-user-clock"></i><span>Attendance Management</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                     
+
                      <ul id="admin_attendance" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="@yield('view')" ><a href="{{ route('admin_attendance_view') }}">View All Attandance</a></li>
                      </ul>
                   </li>
 
-                  
+
                   {{-- profile --}}
                    <li>
                       <a href="#user-info" class="iq-waves-effect collapsed"  data-toggle="collapse" aria-expanded="false"><i class="fas fa-user"></i><span>Profiles</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>

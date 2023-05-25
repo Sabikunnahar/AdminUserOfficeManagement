@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Loan;
+use Barryvdh\DomPDF\Facade\PDF;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,7 @@ class UserManagementController extends Controller
     {
         return view('admin.manage_users.loan_view');
     }
-    
+
     public function travel_view(Request $request)
     {
         return view('admin.manage_users.travel_view');
@@ -38,5 +39,19 @@ class UserManagementController extends Controller
     public function attendance_view(Request $request)
     {
         return view('admin.manage_users.attendance_view');
+    }
+
+    // PDF Generating function
+    public function generatePDF(){
+        $info = User::orderBy('id','ASC')->paginate(10);
+        $data = [
+            'title' => 'Welcome to Office Management System',
+            'date' => date('m/d/Y'),
+            'info' => $info
+        ];
+
+        $pdf = PDF::loadview('admin.manage_users.myPDF', $data);
+
+        return $pdf->download('All-Users.pdf');
     }
 }

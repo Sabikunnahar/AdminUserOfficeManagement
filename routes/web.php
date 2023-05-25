@@ -18,6 +18,7 @@ use App\Http\Controllers\ticketControlle;
 use App\Http\Controllers\loanController;
 use App\Http\Controllers\travelController;
 use App\Http\Controllers\transportController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,9 @@ use App\Http\Controllers\transportController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Email verification route
+Auth::routes(['verify' => true]);
 
 Route::get('/', function () {
     return view('welcome');
@@ -59,7 +63,7 @@ Route::group(['prefix'=>'admin'], function(){
     Route::get('profile-settings',[ProfileController::class,'profileSettings'])->name('profile_settings');
     Route::post('profile-update',[ProfileController::class,'profileUpdate'])->name('update_profile');
     Route::post('profile-password',[ProfileController::class,'profilePasswordUpdate'])->name('profile_password_update');
-    
+
     // // User Create
     Route::get('/create_users', [UserManagementController::class, 'user_create'])->name('create_users');
     Route::get('/all_users', [UserManagementController::class, 'view_users'])->name('all_users');
@@ -68,8 +72,8 @@ Route::group(['prefix'=>'admin'], function(){
     Route::get('/user_loans', [UserManagementController::class, 'user_loans'])->name('user_loans');
     Route::get('/transport_view', [UserManagementController::class, 'transport_view'])->name('admin_transport_view');
     Route::get('/attendance', [UserManagementController::class, 'attendance_view'])->name('admin_attendance_view');
-    
-    
+
+
     /// Notice Board
     Route::get('notice-board',[NoticeBoardController::class,'index'])->name('notice_board');
     Route::post('notice-board/store',[NoticeBoardController::class,'store'])->name('notice_board_store');
@@ -77,7 +81,7 @@ Route::group(['prefix'=>'admin'], function(){
     Route::post('notice-board/update',[NoticeBoardController::class,'update'])->name('notice_board_update');
     Route::get('notice-board/delete/{id}',[NoticeBoardController::class,'destroy']);
     Route::get('notice-board/view',[NoticeBoardController::class,'view'])->name('admin_notice_view');
-    
+
     /// Events
     Route::get('events',[EventController::class,'index'])->name('event_create');
     Route::post('events/store',[EventController::class,'store'])->name('event_store');
@@ -85,7 +89,7 @@ Route::group(['prefix'=>'admin'], function(){
     Route::post('events/update',[EventController::class,'update'])->name('event_update');
     Route::get('events/delete/{id}',[EventController::class,'destroy']);
     Route::get('events/view',[EventController::class,'view'])->name('admin_event_view');
-    
+
 
     /// Tickets
     Route::get('tickets/controller',[adminTicketControlle::class,'index'])->name('admin_ticket');
@@ -104,7 +108,7 @@ Route::group(['prefix'=>'admin'], function(){
     Route::get('approved/{id}',[adminLeaveController::class,'approve']);
     Route::get('leaves/view',[adminLeaveController::class,'view'])->name('admin_view_leaves');
 
-    
+
     //Notification
     Route::get('notification',[notificationController::class,'index'])->name('notify');
     Route::post('notification/store',[notificationController::class,'store'])->name('notify_store');
@@ -112,7 +116,7 @@ Route::group(['prefix'=>'admin'], function(){
     // Route::post('notification/update',[notificationController::class,'update'])->name('notify_update');
     Route::get('notification/delete/{id}',[notificationController::class,'destroy']);
     Route::get('notification/view',[notificationController::class,'view'])->name('admin_view_notify');
-    
+
     /// company
     Route::get('company',[CompanyController::class,'index'])->name('company_create');
     Route::post('company/store',[CompanyController::class,'store'])->name('company_store');
@@ -121,6 +125,10 @@ Route::group(['prefix'=>'admin'], function(){
     Route::get('company/delete/{id}',[CompanyController::class,'destroy']);
 
 
+
+    // PDF Generator
+
+Route::get('generate-pdf', [UserManagementController::class, 'generatePDF'])->name('user_pdf');
 
     });
 

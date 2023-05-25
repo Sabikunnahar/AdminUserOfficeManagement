@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "barryvdh/laravel-dompdf": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
         "inertiajs/inertia-laravel": "^0.6.3",
         "intervention/image": "^2.7",
@@ -13,7 +14,7 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^2.8",
         "laravel/tinker": "^2.7",
-        "laravel/ui": "^4.0",
+        "laravel/ui": "^4.2",
         "pusher/pusher-php-server": "^7.2",
         "tightenco/ziggy": "^1.0"
     },
