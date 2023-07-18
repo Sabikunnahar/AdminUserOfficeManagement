@@ -23,6 +23,10 @@ class UserManagementController extends Controller
     {
         return view('admin.manage_users.all_users');
     }
+    public function view_users_profile($id){
+        $item =User::findOrFail($id);
+        return view('admin.manage_users.all_users_profile',compact('item'));
+    }
     public function user_loans(Request $request)
     {
         return view('admin.manage_users.loan_view');

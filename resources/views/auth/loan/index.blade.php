@@ -43,7 +43,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="email">Loan Application Reason</label>
-                                <textarea class="form-control" name="loan_reason" value="{{ old('loan_reason') }}" rows="2" placeholder="Event Name Here"></textarea>
+                                <textarea class="form-control" name="loan_reason" value="{{ old('loan_reason') }}" rows="2" placeholder="Loan Application Reason"></textarea>
                                 @error('loan_reason')
                                 <span class="invalid-feedback" role="alert"></span>
                                 <strong class="text-danger">{{ $message }}</strong>
@@ -51,7 +51,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Loan Amount</label>
-                                <input type="text" class="form-control" name="loan_amount" value="{{ old('loan_amount') }}" placeholder="Contact English">
+                                <input type="text" class="form-control" name="loan_amount" value="{{ old('loan_amount') }}" placeholder="Amount">
                                 @error('loan_amount')
                                 <span class="invalid-feedback" role="alert"></span>
                                 <strong class="text-danger">{{ $message }}</strong>
@@ -59,7 +59,7 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <label for="">Loan Needed Amount</label>
+                                    <label for="">Loan Needed Date</label>
                                     <input type="date" class="form-control" name="loan_date" value="{{ old('loan_date') }}" placeholder="Faculties English">
                                     @error('loan_date')
                                     <span class="invalid-feedback" role="alert"></span>

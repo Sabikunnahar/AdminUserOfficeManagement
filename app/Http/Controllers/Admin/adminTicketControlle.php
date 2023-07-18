@@ -32,7 +32,7 @@ class adminTicketControlle extends Controller
             'ticket_des'=>$request->ticket_des,
             'ticket_assigned'=>$request->ticket_assigned,
             'created_at' =>Carbon::now(),
-            
+
         ]);
         $notification=array(
             'message'=>'Created Success',
@@ -43,10 +43,10 @@ class adminTicketControlle extends Controller
     // Edit
     public function edit($id){
             $edit =Ticket::findOrFail($id);
-    
+
             return view('admin.tickets.edit',compact('edit'));
         }
-    
+
     // Update
     public function update(Request $request){
 

@@ -17,11 +17,11 @@
           </div>
        </div>
        <div class="navbar-breadcrumb">
-          <h5 class="mb-0">Events EDIT</h5>
+          <h5 class="mb-0">Users</h5>
           <nav aria-label="breadcrumb">
              <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a href="">Events Edit</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Events Edit</li>
+                <li class="breadcrumb-item"><a href="">Users</a></li>
+                {{-- <li class="breadcrumb-item active" aria-current="page">Events Edit</li> --}}
              </ul>
           </nav>
        </div>
@@ -33,7 +33,7 @@
         <div class="iq-card">
 
 
-            
+
 
         <div class="iq-card-body">
             <div class="table-responsive">
@@ -48,6 +48,7 @@
                         <th>Job Role</th>
                         <th>Total Leaves</th>
                         <th>Leaves</th>
+                        <th>View</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,7 +66,10 @@
                         <td>{{ $item->job_title}}</td>
                         <td>{{ $item->leave_total}}</td>
                         <td>{{ $item->leave_count}}</td>
-                        
+                        <td>
+                            <a type="button" class="btn btn-info mt-0" href="{{ url('admin/all_users/profile/'.$item->id) }}">View</a>
+                        </td>
+
 
                     </tr>
                     @endforeach
@@ -74,15 +78,7 @@
             </div>
             <div class="row justify-content-between mt-3">
                 <div id="user-list-page-info" class="col-md-6">
-                {{-- <span>Showing 1 to 5 of 5 entries</span> --}}
                 </div>
-                {{-- <div class="col-md-6">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination justify-content-end mb-0">
-                            {{ $notice_board->links() }}
-                        </ul>
-                    </nav>
-                </div> --}}
             </div>
         </div>
       </div>

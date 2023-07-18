@@ -67,6 +67,7 @@ Route::group(['prefix'=>'admin'], function(){
     // // User Create
     Route::get('/create_users', [UserManagementController::class, 'user_create'])->name('create_users');
     Route::get('/all_users', [UserManagementController::class, 'view_users'])->name('all_users');
+    Route::get('/all_users/profile/{id}', [UserManagementController::class, 'view_users_profile'])->name('all_users_profile');
     Route::get('/user_loans', [UserManagementController::class, 'user_loans'])->name('user_loans');
     Route::get('/travel_view', [UserManagementController::class, 'travel_view'])->name('admin_travel_view');
     Route::get('/user_loans', [UserManagementController::class, 'user_loans'])->name('user_loans');
@@ -128,7 +129,7 @@ Route::group(['prefix'=>'admin'], function(){
 
     // PDF Generator
 
-Route::get('generate-pdf', [UserManagementController::class, 'generatePDF'])->name('user_pdf');
+    Route::get('generate-pdf', [UserManagementController::class, 'generatePDF'])->name('user_pdf');
 
     });
 

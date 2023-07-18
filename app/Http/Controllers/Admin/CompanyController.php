@@ -28,12 +28,12 @@ class CompanyController extends Controller
             'company_name' =>'required',
             'company_logo' =>'required',
         ]);
-        
+
         $img =$request->file('company_logo');
         $img_gen = hexdec(uniqid()).'.'.$img->getClientOriginalExtension();
         Image::make($img)->save('admin/images/company'.$img_gen);
         $save_url='admin/images/company'.$img_gen;
-    
+
         Company::insert([
             'company_name'=>$request->company_name,
             'company_logo'=>$save_url,
@@ -45,7 +45,7 @@ class CompanyController extends Controller
              );
         return redirect()->back()->with($notification);
     }
-    
+
     // Edit
     public function edit($id){
         $edit =Company::findOrFail($id);

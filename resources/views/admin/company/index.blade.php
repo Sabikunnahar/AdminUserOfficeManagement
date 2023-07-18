@@ -17,11 +17,11 @@
           </div>
        </div>
        <div class="navbar-breadcrumb">
-          <h5 class="mb-0">LATEST NEWS</h5>
+          <h5 class="mb-0">Company Logo</h5>
           <nav aria-label="breadcrumb">
              <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a href="">Latest News</a></li>
-                <li class="breadcrumb-item active" aria-current="page"> Latest News</li>
+                <li class="breadcrumb-item"><a href="">LCompany Logo</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Company Logo</li>
              </ul>
           </nav>
        </div>
@@ -35,7 +35,7 @@
             <div class="iq-card">
                <div class="iq-card-header d-flex justify-content-between">
                   <div class="iq-header-title">
-                     <h4 class="card-title">Latest News</h4>
+                     <h4 class="card-title">Company Logo</h4>
                   </div>
                </div>
                <div class="iq-card-body">
